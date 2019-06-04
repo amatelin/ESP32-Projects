@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Access-Control-Allow-Origin" content="*">
+</head>
+
+<body>
+
+<h2>ESP32 Control</h2>
+
+<div id="led-toggle">
+  <button type="button" onclick="loadXMLDoc()">Toggle LED</button>
+</div>
+<div id="response"></div>
+
+<script>
+function loadXMLDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("response").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "http://192.168.43.87/led/toggle", true);
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>
