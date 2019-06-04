@@ -1,17 +1,18 @@
 #include <Ticker.h>
 #include <WiFiWrapper.hpp>
 #include <OTAUpdate.hpp>
+#include <config.h>
 
-void blink();
-
-const char* ssid = "AndroidAP_8730";
-const char* password = "tatatitatata";
+const char* ssid = WIFI_SSID;
+const char* password = WIFI_PASSWORD;
 
 #define LED_BUILTIN 2
 
 bool ledState;
 
 Ticker timer1(blink, 1000);
+
+void blink();
 
 void setup() {
   // Start serial, will be used by WiFi and OTA Update routines

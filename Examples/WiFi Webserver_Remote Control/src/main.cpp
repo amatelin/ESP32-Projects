@@ -1,11 +1,10 @@
 #include <WiFiWrapper.hpp>
 #include <OTAUpdate.hpp>
 #include <ESPAsyncWebServer.h>
+#include <config.h>
 
-
-const char* ssid = "AndroidAP_8730";
-const char* password = "tatatitatata";
-
+const char* ssid = WIFI_SSID;
+const char* password = WIFI_PASSWORD;
 
 #define LED_BUILTIN 2
 
