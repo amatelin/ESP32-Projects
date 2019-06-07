@@ -10,9 +10,9 @@ const char* password = WIFI_PASSWORD;
 
 bool ledState;
 
-Ticker timer1(blink, 1000);
-
 void blink();
+
+Ticker timer1(blink, 1000);
 
 void setup() {
   // Start serial, will be used by WiFi and OTA Update routines
